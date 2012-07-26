@@ -191,14 +191,14 @@ public class INIParser {
    * @return an iterator over section keys, or <code>null</code> if no
    *          such section exists
    */
-  public Iterator getKeys(String aSection) {
+  public Iterator<?> getKeys(String aSection) {
     /*
      * Simple wrapper class to convert Enumeration to Iterator
      */
-    class PropertiesIterator implements Iterator {
-      private Enumeration e;
+    class PropertiesIterator implements Iterator<Object> {
+      private Enumeration<?> e;
 
-      public PropertiesIterator(Enumeration aEnum) {
+      public PropertiesIterator(Enumeration<?> aEnum) {
         e = aEnum;
       }
 
