@@ -498,9 +498,9 @@ public class Cucumber implements Runnable {
 		this.sendPacket("%xt%z%zo%" + this.players.get(this.myPlayerID).getIntRoomID() + "%" + amount + "%");
 	}
 	
-	public void sendMail(int penguinID, int cardID){
-		this.sendPacket("%xt%s%l#ms%" + penguinID + "%" + cardID + "%");
-	}
+    public void sendMail(int penguinID, int cardID){
+        this.sendPacket("%xt%s%l#ms%" + this.players.get(this.myPlayerID).getIntRoomID() + "%" + penguinID + "%" + cardID + "%");
+    }
 	
 	public void buddyRequest(int id){
 		this.sendPacket("%xt%s%b#br%" + this.players.get(this.myPlayerID).getIntRoomID() + "%" + id + "%");
@@ -853,8 +853,8 @@ public class Cucumber implements Runnable {
 
 			// Phrase Chat handler
 			else if(handler.equals("sc")){
-				int user_id = Integer.parseInt(packetArray[4]);
-				String encMsg = packetArray[5];
+				//int user_id = Integer.parseInt(packetArray[4]);
+				//String encMsg = packetArray[5];
 				//~ parseChatMessage is buggy. Use at own risk.
 				//~ if(this.players.containsKey(user_id)){
 					//~ notification(players.get(user_id).getNickname() + "said " + parseChatMessage(encMsg));
